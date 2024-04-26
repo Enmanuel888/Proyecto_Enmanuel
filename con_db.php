@@ -1,3 +1,3 @@
 <?php
 
-$conex = mysqli_connect("localhost","root","greciamora","all_day_village");
+$conex = mysqli_connect("localhost","root","123456789","all_day_village");

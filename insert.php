@@ -2,22 +2,21 @@
     include("con_db.php");
 
     if (isset($_POST['registra'])) {
-    if (strlen($_POST['tipo_villa']) >= 1 && 
-        strlen($_POST['ubicacion']) >= 1 && 
-        strlen($_POST['capacidad']) >= 1 && 
-        strlen($_POST['descripcion']) >= 1 && 
-        strlen($_POST['servicios_comodidades']) >= 1 &&
-        strlen($_POST['precio']) >= 1  )
+    if (strlen($_POST['nombre']) >= 1 && 
+        strlen($_POST['especialidad']) >= 1 && 
+        strlen($_POST['menu']) >= 1 && 
+        strlen($_POST['tarifas']) >= 1 && 
+        strlen($_POST['disponibilidad']) >= 1  )
     {
         
-	    $tip_villa = trim($_POST['tipo_villa']);
-	    $ubi = trim($_POST['ubicacion']);
-        $cap = trim($_POST['capacidad']);
-        $desc = trim($_POST['descripcion']);
-	    $serv = trim($_POST['servicios_comodidades']);
-        $precio = trim($_POST['precio']);
+	    $nombre = trim($_POST['nombre']);
+	    $especialidad = trim($_POST['especialidad']);
+        $menu= trim($_POST['menu']);
+        $tarifas = trim($_POST['tarifas']);
+	    $disponibilidad = trim($_POST['disponibilidad']);
 
-	    $consulta = "INSERT INTO `villa`(`id_villa`, `tipo_villa`, `ubicacion`, `capacidad`, `descripcion`, `servicios_comodidades`,`precio`) VALUES ('0','$tip_villa','$ubi','$cap','$desc','$serv','$precio')";
+	    $consulta = "INSERT INTO `chef` (`id_chef`, `nombre`, `especialidad`, `menu`, `tarifas`, `disponibilidad`) VALUES ('0', '$nombre', '$especialidad', '$menu', '$tarifas', '$disponibilidad ');
+        ";
 
 	    $resultado = mysqli_query($conex,$consulta);
 	    if ($resultado) {

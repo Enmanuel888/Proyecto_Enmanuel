@@ -1,6 +1,6 @@
-<?php
+<a?php
 
-include ('con_db.php');
+@include 'con_db.php';
 
 ?>
 
@@ -24,25 +24,24 @@ include ('con_db.php');
 
 <section class="users">
 
-   <h1 class="title">Vilas registradas</h1>
+   <h1 class="title">Chef de las villas</h1>
 
    <div class="box-container">
       <?php
       include ("con_db.php");
-         $select_users = mysqli_query($conex, "SELECT * FROM `villa`") or die('query failed');
+         $select_users = mysqli_query($conex, "SELECT * FROM `chef`") or die('query failed');
          if(mysqli_num_rows($select_users) > 0){
             while($fetch_users = mysqli_fetch_assoc($select_users)){
       ?>
       <div class="box">
         
-         <p>Id de la villa : <span><?php echo $fetch_users['id_villa']; ?></span></p>
-         <p>tipo_villa de la villa : <span><?php echo $fetch_users['tipo_villa']; ?></span></p>
-         <p>Ubicacion de la villa : <span><?php echo $fetch_users['ubicacion']; ?></span></p>
-         <p>Capacidad de la villa : <span><?php echo $fetch_users['capacidad']; ?></span></p>
-         <p>descripcion de la villa : <span><?php echo $fetch_users['descripcion']; ?></span></p>
-         <p>servicios y comodidades de la villa : <span><?php echo $fetch_users['servicios_comodidades']; ?></span></p>
-         <p>precio de la villa : <span><?php echo $fetch_users['precio']; ?></span></p>
-         <button><a href="drop.php?delete=<?php echo $fetch_users['id_villa']; ?>" onclick="return confirm('Borrar la villa?');" class="delete-btn">Borrar</a></button>
+         <p>Id chef: <span><?php echo $fetch_users['id_chef']; ?></span></p>
+         <p>nombre del chef : <span><?php echo $fetch_users['nombre']; ?></span></p>
+         <p>especialidad del chef : <span><?php echo $fetch_users['especialidad']; ?></span></p>
+         <p>menu del chef : <span><?php echo $fetch_users['menu']; ?></span></p>
+         <p>tarifas: <span><?php echo $fetch_users['tarifas']; ?></span></p>
+         <p>disponibilidad del chef : <span><?php echo $fetch_users['disponibilidad']; ?></span></p>
+         <button><a href="drop.php?delete=<?php echo $fetch_users['id_chef']; ?>" onclick="return confirm('Borrar el chef?');" class="delete-btn">Borrar</a></button>
          
       </div>
       <?php

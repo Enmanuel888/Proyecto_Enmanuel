@@ -3,9 +3,8 @@
 include_once 'con_db.php';
 $id = $_POST['id'];
 if (isset($_POST['update'])) {
-    $query = "UPDATE `villa` SET tipo_villa='$_POST[tipo_villa]',ubicacion='$_POST[ubicacion]',capacidad='$_POST[capacidad]',
-    descripcion='$_POST[descripcion]',servicios_comodidades='$_POST[servicios_comodidades]',precio='$_POST[precio]' 
-    where id_villa=$id ";
+    $query = "UPDATE `chef` SET nombre='$_POST[nombre]',especialidad='$_POST[especialidad]',menu='$_POST[menu]',
+    tarifas='$_POST[tarifas]',disponibilidad='$_POST[disponibilidad]' where id_chef=$id ";
     mysqli_query($conex, $query);
 }
 
